@@ -15,10 +15,11 @@ import example.bismeet.com.mvp.login.LoginActivity;
  */
 @Module
 abstract class AppModule {
+    //a way to create subcomponents
     @ContributesAndroidInjector(modules = {LoginModule.class})
      abstract LoginActivity bindloginActivity();
 
-
+//static so dagger2 doesnt have to create an instance and is more efficient.
         @Provides
         @Singleton
         static Context getContext(Application application){

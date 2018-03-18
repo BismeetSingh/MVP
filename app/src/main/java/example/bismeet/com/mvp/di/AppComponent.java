@@ -11,6 +11,7 @@ import example.bismeet.com.mvp.login.LoginActivity;
 /**
  * Created by bismeet on 18/3/18.
  */
+//provides application wide components
 @Singleton
 @Component(modules = {AppModule.class, LoginModule.class})
 public interface AppComponent {
@@ -18,6 +19,7 @@ public interface AppComponent {
 
     @Component.Builder
     interface Builder {
+        //BindsInstance (similar effect to having a constructor in the module).
         @BindsInstance
         Builder appmod(Application application);
 
